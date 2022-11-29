@@ -70,6 +70,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_lain, "-sf", col_gray4, NULL };
 static const char *ffcmd[]    = { "firefox", NULL };
+static const char *pastesnipcmd[]  = { "paste_snip", NULL };
 static const char *pmenucmd[] = { "passmenu", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_lain, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 
@@ -77,6 +78,7 @@ static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_o,      spawn,          {.v = ffcmd } },
+	{ MODKEY,                       XK_y,      spawn,          {.v = pastesnipcmd} },
 	{ MODKEY,                       XK_u,      spawn,          {.v = pmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
